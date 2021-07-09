@@ -44,7 +44,7 @@ std::map<K, C> mapOf2(const std::multimap<K, V> &mm) {
 
 /**
  * Uses insert iterator
- * Works on nearly every container
+ * Works on containers, which support insert
  */
 template<typename K, typename V, class C = std::vector<V>>
 std::map<K, C> mapOf3(const std::multimap<K, V> &mm) {
@@ -63,7 +63,7 @@ std::map<K, C> mapOf3(const std::multimap<K, V> &mm) {
 
 /**
  * Uses back insert iterator
- * Works on nearly every container
+ * Works only on containers which support push_back
  */
 template<typename K, typename V, class C = std::vector<V>>
 std::map<K, C> mapOf4(const std::multimap<K, V> &mm) {
@@ -79,6 +79,8 @@ std::map<K, C> mapOf4(const std::multimap<K, V> &mm) {
   }
   return new_map;
 }
+
+
 
 int main() {
   std::multimap<std::string, int> mm{
